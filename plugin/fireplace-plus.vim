@@ -14,6 +14,7 @@ function! DbxInstrument()
   try
     execute 'silent normal! ' . "?defn\r/]\r"
     execute 'silent normal! ' . "o(use 'debux.core)"
+    execute ':Eval'
     execute 'silent normal! ' . "o(debux.core/dbgn"
     execute 'silent normal! ' . "j0%$a)"
     execute ':Eval'
@@ -35,4 +36,3 @@ endfunction
 
 command! -nargs=0 DbxInstrument call DbxInstrument()
 command! -nargs=0 DbxUnstrument call DbxUnstrument()
-
